@@ -1,0 +1,3 @@
+/*
+    Estado global del usuario
+ */
