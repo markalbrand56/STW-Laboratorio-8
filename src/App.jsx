@@ -1,8 +1,10 @@
 import React from "react"
 import { StoreContext } from "storeon/react"
-import store from "@store"
+import store from "./store"
 import "./App.css"
-import Page from "@pages"
+import Page from "./pages"
+
+// TODO Resolver aliases de vite.config.js
 
 function App() {
     return (
