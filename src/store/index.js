@@ -1,4 +1,3 @@
-// import { storeonDevtools } from "storeon/devtools"
 import { routerNavigate } from "@storeon/router"
 import { createStoreon } from "storeon"
 import { storeonDevtools } from "storeon/devtools"
