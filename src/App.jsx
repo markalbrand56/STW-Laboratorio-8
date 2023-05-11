@@ -1,23 +1,16 @@
 import React from "react"
+import { StoreContext } from "storeon/react"
+import store from "@store"
 import "./App.css"
+import Page from "@pages"
 
 function App() {
     return (
-        <div className="App">
-            <header className="App-header">
-                <p>
-                    Edit <code>src/App.jsx</code> and save to reload.
-                </p>
-                <a
-                    className="App-link"
-                    href="https://reactjs.org"
-                    rel="noopener noreferrer"
-                    target="_blank"
-                >
-                    Learn React
-                </a>
-            </header>
-        </div>
+        <StoreContext.Provider value={store}>
+            <div className="App">
+                <Page />
+            </div>
+        </StoreContext.Provider>
     )
 }
 
