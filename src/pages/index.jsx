@@ -8,7 +8,7 @@ import Game from "./Game/Game"
 function Page() {
     const { [routerKey]: route } = useStoreon(routerKey)
 
-    let Component = null
+    let Component
     switch (route.match.page) {
         case "home":
             Component = <Home />
