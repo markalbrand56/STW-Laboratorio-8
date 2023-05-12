@@ -1,11 +1,17 @@
+* {
+    outline: 1px red dashed;
+}
+
 .InputContainer {
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: end;
+
+    width: 100%;
 }
 
 .InputNumber {
-    max-width: 75px;
+    max-width: 60px;
     margin: 0.5em 0.5em;
 }
