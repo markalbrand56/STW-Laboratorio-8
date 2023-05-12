@@ -1,7 +1,3 @@
-* {
-    outline: red dashed 1px;
-}
-
 .HomeMenu {
     display: flex;
     flex-direction: column;
