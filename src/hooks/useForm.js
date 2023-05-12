@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react"
 import { useStoreon } from "storeon/react"
 
-
 const useForm = (schema, initialValues) => {
     const { dispatch, config} = useStoreon("config")
     const [errors, setErrors] = useState(false)
@@ -22,8 +21,14 @@ const useForm = (schema, initialValues) => {
 
     const onChange =
         (field) =>
-        ({ target: { value } }) =>
-            setValue(field, value)
+        ({ target: { value } }) => {
+            if (field === "timeLimit") {
+                const newValue = value === "0" ? null : parseInt(value, 10)
+                setValue(field, newValue)
+            } else {
+                setValue(field, value)
+            }
+        }
 
     const validate = () => {
         const validation = schema.validate(values)

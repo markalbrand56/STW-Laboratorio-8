@@ -82,13 +82,13 @@ function ConfigForm() {
                     </option>
                     <option
                         value="dark"
-                        selected={form.values.theme === "default"}
+                        selected={form.values.theme === "dark"}
                     >
                         Dark
                     </option>
                     <option
                         value="light"
-                        selected={form.values.theme === "default"}
+                        selected={form.values.theme === "light"}
                     >
                         Light
                     </option>
