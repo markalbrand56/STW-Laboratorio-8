@@ -2,6 +2,7 @@ import React from "react"
 import Joi from "joi"
 import styles from "./ConfigForm.module.css"
 import useForm from "../../hooks/useForm"
+import Input from "../Input/Input"
 
 const schema = Joi.object({
     height: Joi.number().min(4).max(100).required(),
@@ -22,30 +23,24 @@ function ConfigForm() {
 
     return (
         <div className={styles.ConfigForm}>
-            <div className={styles.ContainerInputNumber}>
-                <span>Height: </span>
-                <input
-                    value={form.values.height}
-                    onChange={form.onChange("height")}
-                    type="number"
-                    className={styles.InputNumber}
-                    placeholder="Height"
-                    min={4}
-                    max={100}
-                />
-            </div>
-            <div className={styles.ContainerInputNumber}>
-                <span>Width: </span>
-                <input
-                    value={form.values.width}
-                    onChange={form.onChange("width")}
-                    type="number"
-                    className={styles.InputNumber}
-                    placeholder="Width"
-                    min={4}
-                    max={100}
-                />
-            </div>
+            <Input
+                value={form.values.height}
+                onChange={form.onChange("height")}
+                type="number"
+                placeholder="Height"
+                label="Height"
+                max={100}
+                min={4}
+            />
+            <Input
+                value={form.values.width}
+                onChange={form.onChange("width")}
+                type="number"
+                placeholder="Width"
+                label="Width"
+                max={100}
+                min={4}
+            />
             <div className={styles.ContainerSelect}>
                 <span>Skin: </span>
                 <select

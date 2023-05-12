@@ -1,0 +1,11 @@
+.InputContainer {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.InputNumber {
+    max-width: 75px;
+    margin: 0.5em 0.5em;
+}
