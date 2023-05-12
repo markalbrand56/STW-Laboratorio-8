@@ -6,11 +6,7 @@ function Select({ value, onChange, options, label }) {
     return (
         <div className={styles.ContainerSelect}>
             <span>{label}: </span>
-            <select
-                className={styles.Select}
-                value={value}
-                onChange={onChange}
-            >
+            <select className={styles.Select} value={value} onChange={onChange}>
                 {options.map((option) => (
                     <option
                         key={option.value}

@@ -12,7 +12,6 @@ import Select from "../../components/Select/Select"
     - Límite de tiempo (checkbox)
  */
 
-
 const schema = Joi.object({
     height: Joi.number().min(4).max(100).required(),
     width: Joi.number().min(4).max(100).required(),
