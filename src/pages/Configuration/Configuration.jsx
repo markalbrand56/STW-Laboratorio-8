@@ -3,6 +3,7 @@ import Joi from "joi"
 import styles from "./Configuration.module.css"
 import useForm from "../../hooks/useForm"
 import Input from "../../components/Input/Input"
+import Select from "../../components/Select/Select"
 
 /*
     - Ancho y alto del laberinto (4-100)
@@ -49,54 +50,26 @@ function Configuration() {
                 max={100}
                 min={4}
             />
-            <div className={styles.ContainerSelect}>
-                <span>Skin: </span>
-                <select
-                    className={styles.Select}
-                    value={form.values.skin}
-                    onChange={form.onChange("skin")}
-                >
-                    <option
-                        value="default"
-                        selected={form.values.skin === "default"}
-                    >
-                        Default
-                    </option>
-                    <option value="var1" selected={form.values.skin === "var1"}>
-                        Var1
-                    </option>
-                    <option value="var2" selected={form.values.skin === "var2"}>
-                        Var2
-                    </option>
-                </select>
-            </div>
-            <div className={styles.ContainerSelect}>
-                <span>Theme: </span>
-                <select
-                    className={styles.Select}
-                    value={form.values.theme}
-                    onChange={form.onChange("theme")}
-                >
-                    <option
-                        value="default"
-                        selected={form.values.theme === "default"}
-                    >
-                        Default
-                    </option>
-                    <option
-                        value="dark"
-                        selected={form.values.theme === "dark"}
-                    >
-                        Dark
-                    </option>
-                    <option
-                        value="light"
-                        selected={form.values.theme === "light"}
-                    >
-                        Light
-                    </option>
-                </select>
-            </div>
+            <Select
+                value={form.values.skin}
+                onChange={form.onChange("skin")}
+                options={[
+                    { value: "default", label: "Default" },
+                    { value: "var1", label: "Var1" },
+                    { value: "var2", label: "Var2" },
+                ]}
+                label="Skin"
+            />
+            <Select
+                value={form.values.theme}
+                onChange={form.onChange("theme")}
+                options={[
+                    { value: "default", label: "Default" },
+                    { value: "var1", label: "Var1" },
+                    { value: "var2", label: "Var2" },
+                ]}
+                label="Theme"
+            />
             <Input
                 value={form.values.timeLimit}
                 onChange={form.onChange("timeLimit")}
