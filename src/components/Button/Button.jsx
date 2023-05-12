@@ -1,6 +1,6 @@
 import React from "react"
-import styles from "./Button.module.css"
 import PropTypes from "prop-types"
+import styles from "./Button.module.css"
 
 function Button({ children, onClick, type = "primary" }) {
     return (
