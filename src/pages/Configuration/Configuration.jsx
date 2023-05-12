@@ -1,4 +1,5 @@
 import React from "react"
+import ConfigForm from "../../components/ConfigForm/ConfigForm"
 
 /*
     - Ancho y alto del laberinto (4-100)
@@ -7,11 +8,7 @@ import React from "react"
     - Límite de tiempo (checkbox)
  */
 function Configuration() {
-    return (
-        <div>
-            <h1>Configuration</h1>
-        </div>
-    )
+    return <ConfigForm />
 }
 
 export default Configuration
