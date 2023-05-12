@@ -21,8 +21,8 @@ function Input({ label, type, value, onChange, placeholder, min, max }) {
 
 Input.propTypes = {
     label: PropTypes.string.isRequired,
-    type: PropTypes.string.isRequired,
-    value: PropTypes.oneOf(["number", "text"]).isRequired,
+    type: PropTypes.oneOf(["number", "text"]).isRequired,
+    value: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
     onChange: PropTypes.func.isRequired,
     placeholder: PropTypes.string.isRequired,
     min: PropTypes.number.isRequired,
