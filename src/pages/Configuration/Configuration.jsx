@@ -4,6 +4,7 @@ import styles from "./Configuration.module.css"
 import useForm from "../../hooks/useForm"
 import Input from "../../components/Input/Input"
 import Select from "../../components/Select/Select"
+import Pills from "../../components/Pills/Pills"
 
 /*
     - Ancho y alto del laberinto (4-100)
@@ -77,6 +78,18 @@ function Configuration() {
                 label="Time Limit"
                 max={600}
                 min={0}
+            />
+            <Pills
+                tabs={[
+                    {
+                        label: "Theme 1",
+                        content: "Tab 1 content",
+                    },
+                    {
+                        label: "Theme 2",
+                        content: "Tab 2 content",
+                    },
+                ]}
             />
         </div>
     )
