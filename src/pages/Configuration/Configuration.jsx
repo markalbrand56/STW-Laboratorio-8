@@ -5,7 +5,7 @@ import useForm from "../../hooks/useForm"
 import Input from "../../components/Input/Input"
 import Select from "../../components/Select/Select"
 import Pills from "../../components/Pills/Pills"
-import InputCheck from "../../components/InputCheck/InputCheck.jsx";
+import InputCheck from "../../components/InputCheck/InputCheck"
 
 /*
     - Ancho y alto del laberinto (4-100)
