@@ -32,24 +32,26 @@ function Configuration() {
 
     return (
         <div className={styles.ConfigForm}>
-            <Input
-                value={form.values.height}
-                onChange={form.onChange("height")}
-                type="number"
-                placeholder="Height"
-                label="Height"
-                max={100}
-                min={4}
-            />
-            <Input
-                value={form.values.width}
-                onChange={form.onChange("width")}
-                type="number"
-                placeholder="Width"
-                label="Width"
-                max={100}
-                min={4}
-            />
+            <div className={styles.Sizes}>
+                <Input
+                    value={form.values.height}
+                    onChange={form.onChange("height")}
+                    type="number"
+                    placeholder="Height"
+                    label="Height"
+                    max={100}
+                    min={4}
+                />
+                <Input
+                    value={form.values.width}
+                    onChange={form.onChange("width")}
+                    type="number"
+                    placeholder="Width"
+                    label="Width"
+                    max={100}
+                    min={4}
+                />
+            </div>
             <Select
                 value={form.values.skin}
                 onChange={form.onChange("skin")}
@@ -59,25 +61,6 @@ function Configuration() {
                     { value: "var2", label: "Var2" },
                 ]}
                 label="Skin"
-            />
-            <Select
-                value={form.values.theme}
-                onChange={form.onChange("theme")}
-                options={[
-                    { value: "default", label: "Default" },
-                    { value: "var1", label: "Var1" },
-                    { value: "var2", label: "Var2" },
-                ]}
-                label="Theme"
-            />
-            <Input
-                value={form.values.timeLimit}
-                onChange={form.onChange("timeLimit")}
-                type="number"
-                placeholder="None"
-                label="Time Limit"
-                max={600}
-                min={0}
             />
             <Pills
                 tabs={[
@@ -90,6 +73,16 @@ function Configuration() {
                         content: "Tab 2 content",
                     },
                 ]}
+                label="Theme"
+            />
+            <Input
+                value={form.values.timeLimit}
+                onChange={form.onChange("timeLimit")}
+                type="number"
+                placeholder="None"
+                label="Time Limit"
+                max={600}
+                min={0}
             />
         </div>
     )

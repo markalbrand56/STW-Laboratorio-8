@@ -5,6 +5,11 @@
     justify-content: end;
 
     width: 100%;
+    margin: 0.5em;
+    padding: 1em;
+
+    background-color: #303030;
+    border-radius: 15px;
 }
 
 .Select {
