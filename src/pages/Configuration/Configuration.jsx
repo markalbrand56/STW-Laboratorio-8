@@ -5,6 +5,7 @@ import useForm from "../../hooks/useForm"
 import Input from "../../components/Input/Input"
 import Select from "../../components/Select/Select"
 import Pills from "../../components/Pills/Pills"
+import InputCheck from "../../components/InputCheck/InputCheck.jsx";
 
 /*
     - Ancho y alto del laberinto (4-100)
@@ -28,6 +29,7 @@ function Configuration() {
         skin: "default",
         theme: "default",
         timeLimit: null,
+        timeLimitEnabled: false,
     })
 
     return (
@@ -76,14 +78,16 @@ function Configuration() {
                 label="Theme: "
                 onChange={form.onChange("theme")}
             />
-            <Input
+            <InputCheck
                 value={form.values.timeLimit}
-                onChange={form.onChange("timeLimit")}
+                onChangeCheck={form.onChange("timeLimitEnabled")}
+                onChangeInput={form.onChange("timeLimit")}
                 type="number"
                 placeholder="None"
                 label="Time Limit"
                 max={600}
                 min={0}
+                check={form.values.timeLimitEnabled}
             />
         </div>
     )

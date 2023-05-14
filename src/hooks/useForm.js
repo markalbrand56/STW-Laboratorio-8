@@ -23,7 +23,8 @@ const useForm = (schema, initialValues) => {
         (field) =>
         ({ target: { value } }) => {
             if (field === "timeLimit") {
-                const newValue = value === "0" ? null : parseInt(value, 10)
+                const newValue =
+                    value === ("0" || NaN) ? null : parseInt(value, 10)
                 setValue(field, newValue)
             } else {
                 setValue(field, value)
