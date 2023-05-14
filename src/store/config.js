@@ -1,8 +1,8 @@
 const config = (store) => {
     store.on("@init", () => ({
         config: {
-            width: 10,
-            height: 10,
+            width: 4,
+            height: 4,
             skin: "default",
             theme: "default",
             timeLimit: null,

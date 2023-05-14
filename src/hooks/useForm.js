@@ -2,7 +2,7 @@ import { useState, useEffect } from "react"
 import { useStoreon } from "storeon/react"
 
 const useForm = (schema, initialValues) => {
-    const { dispatch, config} = useStoreon("config")
+    const { dispatch, config } = useStoreon("config")
     const [errors, setErrors] = useState(false)
     const [values, setValues] = useState(initialValues)
 

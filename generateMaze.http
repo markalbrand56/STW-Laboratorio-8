@@ -1,2 +1,6 @@
+GET https://maze.uvgenios.online/?type=json&w=5&h=5
+Accept: application/json
+
+###
 GET https://maze.uvgenios.online/?type=json&w=4&h=4
 Accept: application/json

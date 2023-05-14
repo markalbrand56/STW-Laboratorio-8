@@ -1,17 +1,17 @@
 import React from "react"
-import Entity from "../Entity/Entity"
 import PropTypes from "prop-types"
+import Entity from "../Entity/Entity"
 import styles from "./Maze.module.css"
 
 function Maze({ json, width, height }){
+    const containerWidth = parseInt(width, 10) * 2 + parseInt(width, 10) + 1
+    const containerHeight = height * 2 + 1
     return (
         <div
             className={styles.MazeContainer}
             style={{
-                gridTemplateColumns: `repeat(${width * 2 + width + 1}, 50px)`,
-                gridTemplateRows: `repeat(${height * 2 + 1}, 50px)`,
-                width: `${width * 2 + width + 1}px`,
-                height: `${height * 2 + 1}px`,
+                gridTemplateColumns: `repeat(${containerWidth}, 50px)`,
+                gridTemplateRows: `repeat(${containerHeight}, 50px)`,
             }}
         >
             {json.map((row) =>
