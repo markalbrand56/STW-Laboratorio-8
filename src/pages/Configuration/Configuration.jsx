@@ -6,6 +6,8 @@ import Input from "../../components/Input/Input"
 import Select from "../../components/Select/Select"
 import Pills from "../../components/Pills/Pills"
 import InputCheck from "../../components/InputCheck/InputCheck"
+import Button from "../../components/Button/Button"
+import { navigate } from "../../store/index"
 
 /*
     - Ancho y alto del laberinto (4-100)
@@ -22,6 +24,10 @@ const schema = Joi.object({
     timeLimit: Joi.number().min(1).max(60).allow(null),
 })
 
+const goBack = () => {
+    navigate("/")
+}
+
 function Configuration() {
     const form = useForm(schema, {
         height: 4,
@@ -33,62 +39,67 @@ function Configuration() {
     })
 
     return (
-        <div className={styles.ConfigForm}>
-            <div className={styles.Sizes}>
-                <Input
-                    value={form.values.height}
-                    onChange={form.onChange("height")}
-                    type="number"
-                    placeholder="Height"
-                    label="Height"
-                    max={100}
-                    min={4}
+        <div className={styles.Container}>
+            <div className={styles.ConfigForm}>
+                <div className={styles.Sizes}>
+                    <Input
+                        value={form.values.height}
+                        onChange={form.onChange("height")}
+                        type="number"
+                        placeholder="Height"
+                        label="Height"
+                        max={100}
+                        min={4}
+                    />
+                    <Input
+                        value={form.values.width}
+                        onChange={form.onChange("width")}
+                        type="number"
+                        placeholder="Width"
+                        label="Width"
+                        max={100}
+                        min={4}
+                    />
+                </div>
+                <Select
+                    value={form.values.skin}
+                    onChange={form.onChange("skin")}
+                    options={[
+                        { value: "default", label: "Default" },
+                        { value: "var1", label: "Var1" },
+                        { value: "var2", label: "Var2" },
+                    ]}
+                    label="Skin"
                 />
-                <Input
-                    value={form.values.width}
-                    onChange={form.onChange("width")}
+                <Pills
+                    tabs={[
+                        {
+                            label: "Theme 1",
+                            content: "Tab 1 content",
+                        },
+                        {
+                            label: "Theme 2",
+                            content: "Tab 2 content",
+                        },
+                    ]}
+                    label="Theme: "
+                    onChange={form.onChange("theme")}
+                />
+                <InputCheck
+                    value={form.values.timeLimit}
+                    onChangeCheck={form.onChange("timeLimitEnabled")}
+                    onChangeInput={form.onChange("timeLimit")}
                     type="number"
-                    placeholder="Width"
-                    label="Width"
-                    max={100}
-                    min={4}
+                    placeholder="None"
+                    label="Time Limit"
+                    max={600}
+                    min={0}
+                    check={form.values.timeLimitEnabled}
                 />
             </div>
-            <Select
-                value={form.values.skin}
-                onChange={form.onChange("skin")}
-                options={[
-                    { value: "default", label: "Default" },
-                    { value: "var1", label: "Var1" },
-                    { value: "var2", label: "Var2" },
-                ]}
-                label="Skin"
-            />
-            <Pills
-                tabs={[
-                    {
-                        label: "Theme 1",
-                        content: "Tab 1 content",
-                    },
-                    {
-                        label: "Theme 2",
-                        content: "Tab 2 content",
-                    },
-                ]}
-                label="Theme: "
-                onChange={form.onChange("theme")}
-            />
-            <InputCheck
-                value={form.values.timeLimit}
-                onChangeCheck={form.onChange("timeLimitEnabled")}
-                onChangeInput={form.onChange("timeLimit")}
-                type="number"
-                placeholder="None"
-                label="Time Limit"
-                max={600}
-                min={0}
-                check={form.values.timeLimitEnabled}
-            />
+            <Button onClick={goBack} type="primary">
+                Apply
+            </Button>
         </div>
     )
 }
