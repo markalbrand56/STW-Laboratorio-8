@@ -4,12 +4,11 @@ import { MDBTabs, MDBTabsItem, MDBTabsLink } from "mdb-react-ui-kit"
 import styles from "./Pills.module.css"
 import "mdb-react-ui-kit/dist/css/mdb.dark.min.css"
 
-function Pills({ tabs, label }) {
+function Pills({ tabs, label, onChange }) {
     const [activeTab, setActiveTab] = useState(0)
 
     const handleClick = (index) => {
         setActiveTab(index)
-        console.log(index)
     }
 
     return (
@@ -19,7 +18,10 @@ function Pills({ tabs, label }) {
                 {tabs.map((tab, index) => (
                     <MDBTabsItem key={tab.label}>
                         <MDBTabsLink
-                            onClick={() => handleClick(index)}
+                            onClick={() => {
+                                handleClick(index)
+                                onChange({ target: { value: tab.label } })
+                            }}
                             active={activeTab === index}
                         >
                             {tab.label}
@@ -38,6 +40,8 @@ Pills.propTypes = {
             content: PropTypes.node.isRequired,
         })
     ).isRequired,
+    label: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
 }
 
 export default Pills

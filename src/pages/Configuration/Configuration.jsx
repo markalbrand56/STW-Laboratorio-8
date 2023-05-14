@@ -73,7 +73,8 @@ function Configuration() {
                         content: "Tab 2 content",
                     },
                 ]}
-                label="Theme"
+                label="Theme: "
+                onChange={form.onChange("theme")}
             />
             <Input
                 value={form.values.timeLimit}

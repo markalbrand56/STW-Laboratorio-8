@@ -6,6 +6,7 @@ const config = (store) => {
             skin: "default",
             theme: "default",
             timeLimit: null,
+            timeLimitEnabled: false,
         },
     }))
     store.on("config/set", (_, newConfig) => ({
