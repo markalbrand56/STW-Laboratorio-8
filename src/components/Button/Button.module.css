@@ -14,7 +14,6 @@
     font-weight: 700;
     line-height: 24px;
     opacity: 1;
-    outline: 0 solid transparent;
     padding: 8px 18px;
     user-select: none;
     -webkit-user-select: none;
@@ -24,11 +23,16 @@
     border: 0;
 }
 
-.Primary {
+.Button:is(:hover, :focus){
+    outline-offset: 6px;
+}
 
+.Primary {
+    outline: 2px solid #5E5DF0;
 }
 
 .Secondary {
     color: black;
     background: #FFFFFF;
+    outline: 2px solid #FFFFFF;
 }
