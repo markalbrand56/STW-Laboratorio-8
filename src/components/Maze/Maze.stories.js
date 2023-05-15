@@ -7,7 +7,7 @@ export default {
     argTypes: {},
 }
 
-export const Default = {
+export const smallest = {
     args: {
         json: [
             ["+", "-", "-", "+", "-", "-", "+", "-", "-", "+", "-", "-", "+"],
@@ -25,7 +25,7 @@ export const Default = {
     },
 }
 
-export const Custom = {
+export const Medium = {
     args: {
         json: [
             [

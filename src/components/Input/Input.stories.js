@@ -19,3 +19,12 @@ export const Number = {
         max: 100,
     },
 }
+
+export const Text = {
+    args: {
+        label: "Text",
+        type: "text",
+        value: "Hello World",
+        placeholder: "Enter some text",
+    },
+}
