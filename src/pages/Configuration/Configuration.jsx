@@ -94,7 +94,7 @@ function Configuration() {
                     type="number"
                     placeholder="None"
                     label="Time Limit"
-                    max={600}
+                    max={60 * 60}
                     min={1}
                     check={form.values.timeLimitEnabled}
                 />
