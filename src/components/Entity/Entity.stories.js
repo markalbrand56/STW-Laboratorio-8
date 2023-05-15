@@ -24,3 +24,27 @@ export const Goal = {
         type: "goal",
     },
 }
+
+export const Column = {
+    args: {
+        type: "column",
+    },
+}
+
+export const Trail = {
+    args: {
+        type: "trail",
+    },
+}
+
+export const HorizontalWall = {
+    args: {
+        type: "horizontalWall",
+    },
+}
+
+export const VerticalWall = {
+    args: {
+        type: "verticalWall",
+    },
+}
