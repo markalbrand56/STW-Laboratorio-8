@@ -38,6 +38,8 @@ function Configuration() {
         timeLimitEnabled: false,
     })
 
+    console.log("timeLimitEnabled", form.values.timeLimitEnabled)
+
     return (
         <div className={styles.Container}>
             <div className={styles.ConfigForm}>

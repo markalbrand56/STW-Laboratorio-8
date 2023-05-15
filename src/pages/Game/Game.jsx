@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react"
 import { useStoreon } from "storeon/react"
 import Maze from "../../components/Maze/Maze"
 import styles from "./Game.module.css"
+import Timer from "../../components/Timer/Timer"
 
 function Game() {
     const { config } = useStoreon("config")
@@ -30,6 +31,7 @@ function Game() {
 
     return (
         <div className={styles.Container}>
+            {config.timeLimitEnabled && <Timer timeLimit={config.timeLimit} />}
             {mazeLayout && (
                 <Maze
                     json={mazeLayout}

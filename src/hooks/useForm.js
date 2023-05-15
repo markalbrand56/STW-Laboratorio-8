@@ -22,13 +22,10 @@ const useForm = (schema, initialValues) => {
     const onChange =
         (field) =>
         ({ target: { value } }) => {
-            if (field === "timeLimitEnabled") {
-                const timeLimit = value === false ? null : 1
-                setValue(field, value)
-                setValue("timeLimit", timeLimit)
-            } else if (field === "timeLimit") {
-                const intValue = parseInt(value, 10)
-                setValue(field, intValue)
+            if (field === "timeLimit") {
+                const newValue =
+                    value === ("0" || NaN) ? null : parseInt(value, 10)
+                setValue(field, newValue)
             } else {
                 setValue(field, value)
             }
