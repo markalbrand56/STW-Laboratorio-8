@@ -2,7 +2,7 @@ import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import styles from "./Timer.module.css"
 
-function Timer({ timeLimit }) {
+function Timer({ timeLimit, onChange }) {
     const [seconds, setSeconds] = React.useState(0)
     const [minutes, setMinutes] = React.useState(0)
 
@@ -17,6 +17,7 @@ function Timer({ timeLimit }) {
                 clearInterval(interval)
                 setSeconds(0)
                 setMinutes(0)
+                onChange({ target: { value: true } })
                 return
             }
 
@@ -44,6 +45,7 @@ function Timer({ timeLimit }) {
 
 Timer.propTypes = {
     timeLimit: PropTypes.number.isRequired,
+    onChange: PropTypes.func.isRequired,
 }
 
 export default Timer

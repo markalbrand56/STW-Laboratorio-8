@@ -7,6 +7,7 @@ const config = (store) => {
             theme: "default",
             timeLimit: null,
             timeLimitEnabled: false,
+            gameOver: false,
         },
     }))
     store.on("config/set", (_, newConfig) => ({

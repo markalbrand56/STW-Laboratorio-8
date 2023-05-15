@@ -7,6 +7,7 @@ function Maze({ json, width, height }){
     console.log("dentro del maze")
     const containerWidth = parseInt(width, 10) * 2 + parseInt(width, 10) + 1
     const containerHeight = height * 2 + 1
+
     return (
         <div
             className={styles.MazeContainer}

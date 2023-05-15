@@ -1,0 +1,20 @@
+.Container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: max-content;
+
+    padding: 1em 2em;
+
+    background-color: #303030;
+    border-radius: 5px;
+
+    outline: 1px red dashed;
+}
+
+.Timer {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+}
