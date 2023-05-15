@@ -1,3 +1,12 @@
 .MazeContainer {
     display: grid;
+
+    width: max-content;
+    height: max-content;
+
+    padding: 3em;
+
+    background-color: white;
+    border-radius: 15px;
+
 }
