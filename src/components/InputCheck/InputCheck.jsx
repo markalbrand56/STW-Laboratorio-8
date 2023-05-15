@@ -13,7 +13,7 @@ function InputCheck({
     max,
     check,
 }) {
-    const [checked, setChecked] = useState(check || false)
+    const [checked, setChecked] = useState(check)
 
     const handleCheck = () => {
         setChecked(!checked)
