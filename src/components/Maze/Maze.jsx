@@ -21,7 +21,10 @@ function Maze({ json, width, height }) {
         switch (key) {
             case "ArrowUp":
                 if (json[playerPosition.y - 1][playerPosition.x] === " ") {
-                    updateMaze(json, { x: playerPosition.x, y: playerPosition.y - 1 })
+                    updateMaze(json, {
+                        x: playerPosition.x,
+                        y: playerPosition.y - 1,
+                    })
                     setPlayerPosition({
                         ...playerPosition,
                         y: playerPosition.y - 1,
@@ -30,7 +33,10 @@ function Maze({ json, width, height }) {
                 break
             case "ArrowDown":
                 if (json[playerPosition.y + 1][playerPosition.x] === " ") {
-                    updateMaze(json, { x: playerPosition.x, y: playerPosition.y + 1 })
+                    updateMaze(json, {
+                        x: playerPosition.x,
+                        y: playerPosition.y + 1,
+                    })
                     setPlayerPosition({
                         ...playerPosition,
                         y: playerPosition.y + 1,
@@ -39,7 +45,10 @@ function Maze({ json, width, height }) {
                 break
             case "ArrowLeft":
                 if (json[playerPosition.y][playerPosition.x - 1] === " ") {
-                    updateMaze(json, { x: playerPosition.x - 1, y: playerPosition.y })
+                    updateMaze(json, {
+                        x: playerPosition.x - 1,
+                        y: playerPosition.y,
+                    })
                     setPlayerPosition({
                         ...playerPosition,
                         x: playerPosition.x - 1,
@@ -48,7 +57,10 @@ function Maze({ json, width, height }) {
                 break
             case "ArrowRight":
                 if (json[playerPosition.y][playerPosition.x + 1] === " ") {
-                    updateMaze(json, { x: playerPosition.x + 1, y: playerPosition.y })
+                    updateMaze(json, {
+                        x: playerPosition.x + 1,
+                        y: playerPosition.y,
+                    })
                     setPlayerPosition({
                         ...playerPosition,
                         x: playerPosition.x + 1,
