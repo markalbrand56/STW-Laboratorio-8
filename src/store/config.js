@@ -8,6 +8,7 @@ const config = (store) => {
             timeLimit: null,
             timeLimitEnabled: false,
             gameOver: false,
+            win: false,
         },
     }))
     store.on("config/set", (_, newConfig) => ({

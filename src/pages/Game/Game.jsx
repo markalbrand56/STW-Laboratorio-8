@@ -38,6 +38,7 @@ function Game() {
         const maze = await getMaze(config.width, config.height)
         setMazeLayout(maze)
         form.onChange("gameOver")({ target: { value: false } })
+        form.onChange("win")({ target: { value: false } })
     }
 
     useEffect(() => {
@@ -50,12 +51,18 @@ function Game() {
 
     return (
         <div className={styles.Container}>
-            {config.timeLimitEnabled && <Timer timeLimit={config.timeLimit} onChange={form.onChange("gameOver")} />}
+            {config.timeLimitEnabled && (
+                <Timer
+                    timeLimit={config.timeLimit}
+                    onChange={form.onChange("gameOver")}
+                />
+            )}
             {mazeLayout && (
                 <Maze
                     json={mazeLayout}
                     height={config.height}
                     width={config.width}
+                    onWin={form.onChange("win")}
                 />
             )}
         </div>

@@ -3,12 +3,22 @@ import PropTypes from "prop-types"
 import Entity from "../Entity/Entity"
 import styles from "./Maze.module.css"
 
-function Maze({ json, width, height }) {
+function Maze({ json, width, height, onWin }) {
     const [playerPosition, setPlayerPosition] = useState({ x: 1, y: 1 })
     const containerWidth = parseInt(width, 10) * 2 + parseInt(width, 10) + 1
     const containerHeight = height * 2 + 1
+
+    const checkWin = (maze, position) => {
+        console.log("checking win")
+        if (maze[position.y][position.x] === "g") {
+            console.log("GANASTE")
+            onWin({target: {value: true}})
+        }
+    }
+
     const updateMaze = (jsonM, newPlayerPosition) => {
         const newMaze = jsonM
+        checkWin(newMaze, newPlayerPosition)
         newMaze[playerPosition.y][playerPosition.x] = " "
         newMaze[newPlayerPosition.y][newPlayerPosition.x] = "p"
         return newMaze
@@ -20,7 +30,10 @@ function Maze({ json, width, height }) {
         console.log("dentro del handleKeyDown", key)
         switch (key) {
             case "ArrowUp":
-                if (json[playerPosition.y - 1][playerPosition.x] === " ") {
+                if (
+                    json[playerPosition.y - 1][playerPosition.x] === " " ||
+                    json[playerPosition.y - 1][playerPosition.x] === "g"
+                ) {
                     updateMaze(json, {
                         x: playerPosition.x,
                         y: playerPosition.y - 1,
@@ -32,7 +45,10 @@ function Maze({ json, width, height }) {
                 }
                 break
             case "ArrowDown":
-                if (json[playerPosition.y + 1][playerPosition.x] === " ") {
+                if (
+                    json[playerPosition.y + 1][playerPosition.x] === " " ||
+                    json[playerPosition.y + 1][playerPosition.x] === "g"
+                ) {
                     updateMaze(json, {
                         x: playerPosition.x,
                         y: playerPosition.y + 1,
@@ -44,7 +60,10 @@ function Maze({ json, width, height }) {
                 }
                 break
             case "ArrowLeft":
-                if (json[playerPosition.y][playerPosition.x - 1] === " ") {
+                if (
+                    json[playerPosition.y][playerPosition.x - 1] === " " ||
+                    json[playerPosition.y][playerPosition.x - 1] === "g"
+                ) {
                     updateMaze(json, {
                         x: playerPosition.x - 1,
                         y: playerPosition.y,
@@ -56,7 +75,10 @@ function Maze({ json, width, height }) {
                 }
                 break
             case "ArrowRight":
-                if (json[playerPosition.y][playerPosition.x + 1] === " ") {
+                if (
+                    json[playerPosition.y][playerPosition.x + 1] === " " ||
+                    json[playerPosition.y][playerPosition.x + 1] === "g"
+                ) {
                     updateMaze(json, {
                         x: playerPosition.x + 1,
                         y: playerPosition.y,
@@ -114,6 +136,7 @@ Maze.propTypes = {
     json: PropTypes.arrayOf(PropTypes.arrayOf(PropTypes.string)).isRequired,
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
+    onWin: PropTypes.func.isRequired,
 }
 
 export default Maze
