@@ -4,7 +4,7 @@ const config = (store) => {
             width: 4,
             height: 4,
             skin: "default",
-            theme: "default",
+            theme: "Theme 1",
             timeLimit: null,
             timeLimitEnabled: false,
             gameOver: false,
