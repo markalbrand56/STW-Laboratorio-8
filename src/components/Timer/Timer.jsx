@@ -8,8 +8,6 @@ function Timer({ timeLimit, onChange, win }) {
 
     const limit = new Date().getTime() + timeLimit * 1000
 
-    console.log("win", win)
-
     useEffect(() => {
         const interval = setInterval(() => {
             if (win) {
