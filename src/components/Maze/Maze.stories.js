@@ -7,8 +7,10 @@ export default {
     argTypes: {},
 }
 
-export const smallest = {
+export const SmallestS1T1 = {
     args: {
+        skin: "default",
+        theme: "Theme 1",
         json: [
             ["+", "-", "-", "+", "-", "-", "+", "-", "-", "+", "-", "-", "+"],
             ["|", "p", " ", " ", " ", " ", " ", " ", " ", " ", " ", " ", "|"],
@@ -25,8 +27,10 @@ export const smallest = {
     },
 }
 
-export const Medium = {
+export const MediumS1T1 = {
     args: {
+        skin: "default",
+        theme: "Theme 1",
         json: [
             [
                 "+",

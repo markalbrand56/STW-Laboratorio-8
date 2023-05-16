@@ -70,6 +70,8 @@ function Game() {
                     height={config.height}
                     width={config.width}
                     onWin={form.onChange("win")}
+                    theme={config.theme}
+                    skin={config.skin}
                 />
             )}
         </div>

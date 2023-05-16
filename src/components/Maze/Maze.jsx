@@ -3,16 +3,14 @@ import PropTypes from "prop-types"
 import Entity from "../Entity/Entity"
 import styles from "./Maze.module.css"
 
-function Maze({ json, width, height, onWin }) {
+function Maze({ json, width, height, onWin, theme, skin }) {
     const [playerPosition, setPlayerPosition] = useState({ x: 1, y: 1 })
     const containerWidth = parseInt(width, 10) * 2 + parseInt(width, 10) + 1
     const containerHeight = height * 2 + 1
 
     const checkWin = (maze, position) => {
-        console.log("checking win")
         if (maze[position.y][position.x] === "g") {
-            console.log("GANASTE")
-            onWin({target: {value: true}})
+            onWin({ target: { value: true } })
         }
     }
 
@@ -26,8 +24,6 @@ function Maze({ json, width, height, onWin }) {
 
     const handleKeyDown = (event) => {
         const { key } = event
-        console.log("position", playerPosition)
-        console.log("dentro del handleKeyDown", key)
         switch (key) {
             case "ArrowUp":
                 if (
@@ -112,17 +108,17 @@ function Maze({ json, width, height, onWin }) {
                 row.map((col) => {
                     switch (col) {
                         case "p":
-                            return <Entity type="player" />
+                            return <Entity type="player" custom={skin} />
                         case "g":
-                            return <Entity type="goal" />
+                            return <Entity type="goal" custom={theme} />
                         case "+":
-                            return <Entity type="column" />
+                            return <Entity type="column" custom={theme} />
                         case "-":
-                            return <Entity type="horizontalWall" />
+                            return <Entity type="horizontalWall" custom={theme} />
                         case "|":
-                            return <Entity type="verticalWall" />
+                            return <Entity type="verticalWall" custom={theme} />
                         case " ":
-                            return <Entity type="trail" />
+                            return <Entity type="trail" custom={theme} />
                         default:
                             return null
                     }
@@ -137,6 +133,8 @@ Maze.propTypes = {
     width: PropTypes.number.isRequired,
     height: PropTypes.number.isRequired,
     onWin: PropTypes.func.isRequired,
+    theme: PropTypes.string.isRequired,
+    skin: PropTypes.string.isRequired,
 }
 
 export default Maze
