@@ -12,6 +12,9 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
+
+  width: 100vw;
+  height: 100vh;
 }
 
 body {
@@ -22,4 +25,7 @@ body {
   min-height: 100vh;
 
   background-color: #242424;
+
+  width: 100vw;
+  height: 100vh;
 }
