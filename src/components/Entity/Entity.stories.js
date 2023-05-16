@@ -10,41 +10,48 @@ export default {
 export const Default = {
     args: {
         type: "player",
+        custom: "default",
     },
 }
 
-export const Player = {
+export const Player1 = {
     args: {
         type: "player",
+        custom: "default",
     },
 }
 
-export const Goal = {
+export const Goal1= {
     args: {
         type: "goal",
+        custom: "Theme 1",
     },
 }
 
-export const Column = {
-    args: {
-        type: "column",
-    },
-}
-
-export const Trail = {
+export const Trail1 = {
     args: {
         type: "trail",
+        custom: "Theme 1",
     },
 }
 
-export const HorizontalWall = {
+export const Column1 = {
+    args: {
+        type: "column",
+        custom: "Theme 1",
+    },
+}
+
+export const HorizontalWall1 = {
     args: {
         type: "horizontalWall",
+        custom: "Theme 1",
     },
 }
 
-export const VerticalWall = {
+export const VerticalWall1 = {
     args: {
         type: "verticalWall",
+        custom: "Theme 1",
     },
 }
