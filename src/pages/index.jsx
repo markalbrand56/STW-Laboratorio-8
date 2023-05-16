@@ -4,6 +4,7 @@ import { routerKey } from "@storeon/router"
 import Home from "./Home/Home"
 import Configuration from "./Configuration/Configuration"
 import Game from "./Game/Game"
+import Result from "./Result/Result"
 
 function Page() {
     const { [routerKey]: route } = useStoreon(routerKey)
@@ -18,6 +19,9 @@ function Page() {
             break
         case "game":
             Component = <Game />
+            break
+        case "result":
+            Component = <Result />
             break
         default:
             Component = <h1>404</h1>

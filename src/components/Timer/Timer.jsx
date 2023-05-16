@@ -2,14 +2,20 @@ import React, { useEffect } from "react"
 import PropTypes from "prop-types"
 import styles from "./Timer.module.css"
 
-function Timer({ timeLimit, onChange }) {
+function Timer({ timeLimit, onChange, win }) {
     const [seconds, setSeconds] = React.useState(0)
     const [minutes, setMinutes] = React.useState(0)
 
     const limit = new Date().getTime() + timeLimit * 1000
 
+    console.log("win", win)
+
     useEffect(() => {
         const interval = setInterval(() => {
+            if (win) {
+                clearInterval(interval)
+                return
+            }
             const now = new Date().getTime()
             const distance = limit - now
 
@@ -46,6 +52,7 @@ function Timer({ timeLimit, onChange }) {
 Timer.propTypes = {
     timeLimit: PropTypes.number.isRequired,
     onChange: PropTypes.func.isRequired,
+    win: PropTypes.bool.isRequired,
 }
 
 export default Timer

@@ -6,8 +6,6 @@ const useForm = (schema, initialValues) => {
     const [errors, setErrors] = useState(false)
     const [values, setValues] = useState(initialValues)
 
-    console.log("useForm", config)
-
     const setValue = (field, value) => {
         setValues({
             ...values,
