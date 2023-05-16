@@ -20,14 +20,6 @@ export const Player1 = {
         custom: "default",
     },
 }
-
-export const Goal1= {
-    args: {
-        type: "goal",
-        custom: "Theme 1",
-    },
-}
-
 export const Trail1 = {
     args: {
         type: "trail",
