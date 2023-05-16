@@ -13,15 +13,19 @@ function Home() {
     }
 
     return (
-        <div className={styles.HomeMenu}>
-            <h1>Welcome</h1>
-            <div className={styles.Buttons}>
-                <Button type="primary" onClick={handleStartButtonClick}>
-                    Start
-                </Button>
-                <Button type="secondary" onClick={handleConfigButtonClick}>
-                    Settings
-                </Button>
+        <div className={styles.Container}>
+            <img src="src/assets/Geralt bc.png" alt="Geralt"/>
+            <div className={styles.HomeMenu}>
+                <img src="src/assets/TW3 Logo.png" alt="Logo"/>
+                <h1>Welcome</h1>
+                <div className={styles.Buttons}>
+                    <Button type="primary" onClick={handleStartButtonClick}>
+                        Start
+                    </Button>
+                    <Button type="secondary" onClick={handleConfigButtonClick}>
+                        Settings
+                    </Button>
+                </div>
             </div>
         </div>
     )
