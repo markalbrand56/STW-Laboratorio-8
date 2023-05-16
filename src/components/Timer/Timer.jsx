@@ -6,7 +6,7 @@ function Timer({ timeLimit, onChange, win }) {
     const [seconds, setSeconds] = React.useState(0)
     const [minutes, setMinutes] = React.useState(0)
 
-    const limit = new Date().getTime() + timeLimit * 1000
+    const limit = new Date().getTime() + (timeLimit + 2) * 1000
 
     useEffect(() => {
         const interval = setInterval(() => {

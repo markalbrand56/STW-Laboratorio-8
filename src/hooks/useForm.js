@@ -7,6 +7,7 @@ const useForm = (schema, initialValues) => {
     const [values, setValues] = useState(initialValues)
 
     const setValue = (field, value) => {
+        console.log("set value", field, value)
         setValues({
             ...values,
             [field]: value,

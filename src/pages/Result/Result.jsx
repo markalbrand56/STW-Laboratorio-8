@@ -26,8 +26,8 @@ function Result() {
     })
 
     const handleButton = () => {
-        form.onChange("gameOver")({ target: { value: false } })
-        form.onChange("win")({ target: { value: false } })
+        form.setValue("gameOver", false)
+        form.setValue("win", false)
         navigate("/")
     }
 

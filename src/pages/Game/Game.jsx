@@ -38,8 +38,8 @@ function Game() {
     const loadMaze = async () => {
         const maze = await getMaze(config.width, config.height)
         setMazeLayout(maze)
-        form.onChange("gameOver")({ target: { value: false } })
-        form.onChange("win")({ target: { value: false } })
+        form.setValue("gameOver", false)
+        form.setValue("win", false)
     }
 
     useEffect(() => {
@@ -48,7 +48,6 @@ function Game() {
     }, [])
 
     console.log(config)
-    console.log(mazeLayout)
 
     if (form.values.win || form.values.gameOver) {
         setTimeout(() => {
