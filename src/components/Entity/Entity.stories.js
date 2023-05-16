@@ -20,6 +20,13 @@ export const Player1 = {
         custom: "default",
     },
 }
+
+export const Player2 = {
+    args: {
+        type: "player",
+        custom: "var1",
+    },
+}
 export const Trail1 = {
     args: {
         type: "trail",

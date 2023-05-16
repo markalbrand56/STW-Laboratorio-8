@@ -7,9 +7,9 @@ function Entity({ type, custom }) {
 
     const ilustrations = {
         player: {
-            default: "src/assets/skins/icons8-tanjiro-kamado.svg",
-            var1: "IMAGEN 2 SKIN",
-            var2: "IMAGEN 3 SKIN",
+            default: "src/assets/skins/Geralt.png",
+            var1: "src/assets/skins/Ciri.png",
+            var2: "src/assets/skins/Yennefer.png",
         },
         goal: {
             Theme1: "src/assets/themes/theme1/icons8-lord-voldemort.svg",
