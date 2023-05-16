@@ -5,7 +5,7 @@ import Maze from "../../components/Maze/Maze"
 import styles from "./Game.module.css"
 import Timer from "../../components/Timer/Timer"
 import useForm from "../../hooks/useForm"
-import {navigate} from "../../store/index"
+import { navigate } from "../../store/index"
 
 const schema = Joi.object({
     height: Joi.number().min(4).max(100).required(),
