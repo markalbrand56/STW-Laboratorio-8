@@ -6,7 +6,8 @@
 
     padding: 3em;
 
-    background-color: white;
+    border: 4px #dea909 solid;
+    background-color: transparent;
     border-radius: 15px;
 
 }
