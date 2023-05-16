@@ -93,7 +93,7 @@ function Configuration() {
                     placeholder="None"
                     label="Time Limit"
                     max={60 * 60}
-                    min={1}
+                    min={5}
                     check={form.values.timeLimitEnabled}
                 />
             </div>
