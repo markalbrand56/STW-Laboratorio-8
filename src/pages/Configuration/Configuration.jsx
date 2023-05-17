@@ -84,9 +84,9 @@ function Configuration() {
                     onChangeInput={form.onChange("timeLimit")}
                     type="number"
                     placeholder="None"
-                    label="Time Limit"
+                    label="Time Limit (s)"
                     max={60 * 60}
-                    min={5}
+                    min={15}
                     check={form.config.timeLimitEnabled}
                 />
             </div>

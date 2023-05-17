@@ -6,7 +6,7 @@ const config = (store) => {
             height: 4,
             skin: "default",
             theme: "Theme 1",
-            timeLimit: 0,
+            timeLimit: 15,
             timeLimitEnabled: false,
             gameOver: false,
             win: false,

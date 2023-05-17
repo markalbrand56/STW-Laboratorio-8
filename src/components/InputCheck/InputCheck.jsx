@@ -38,7 +38,7 @@ function InputCheck({
                     placeholder={placeholder}
                     min={min}
                     max={max}
-                    step={5}
+                    step={15}
                 />
             )}
         </div>
