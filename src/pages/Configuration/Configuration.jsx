@@ -58,21 +58,21 @@ function Configuration() {
                     value={form.config.skin}
                     onChange={form.onChange("skin")}
                     options={[
-                        { value: "default", label: "Default" },
-                        { value: "var1", label: "Var1" },
-                        { value: "var2", label: "Var2" },
+                        { value: "default", label: "Geralt" },
+                        { value: "var1", label: "Ciri" },
+                        { value: "var2", label: "Yennefer" },
                     ]}
                     label="Skin"
                 />
                 <Pills
                     tabs={[
                         {
-                            label: "Theme 1",
-                            content: "Tab 1 content",
+                            label: "Velen",
+                            content: "Theme 1",
                         },
                         {
-                            label: "Theme 2",
-                            content: "Tab 2 content",
+                            label: "Novigrad",
+                            content: "Theme 2",
                         },
                     ]}
                     label="Theme: "

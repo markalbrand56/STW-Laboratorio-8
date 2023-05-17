@@ -20,7 +20,7 @@ function Pills({ tabs, label, onChange }) {
                         <MDBTabsLink
                             onClick={() => {
                                 handleClick(index)
-                                onChange({ target: { value: tab.label } })
+                                onChange({ target: { value: tab.content } })
                             }}
                             active={activeTab === index}
                         >

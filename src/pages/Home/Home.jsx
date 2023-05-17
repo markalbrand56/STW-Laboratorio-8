@@ -27,6 +27,7 @@ function Home() {
                     </Button>
                 </div>
             </div>
+            <img src="src/assets/Ciri BC.png" alt="Ciri"/>
         </div>
     )
 }
