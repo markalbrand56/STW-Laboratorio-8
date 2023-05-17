@@ -1,5 +1,4 @@
 const config = (store) => {
-
     store.on("@init", () =>  ({
         config: {
             width: 4,
@@ -15,8 +14,9 @@ const config = (store) => {
     store.on("config/set", (_, newConfig) => {
         console.log("config/set", newConfig)
         return {
-        config: newConfig,
-    }})
+            config: newConfig,
+        }
+    })
     store.on("config/clean", (oldConfig) => {
         return {
             config: {
