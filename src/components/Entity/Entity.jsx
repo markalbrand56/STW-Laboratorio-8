@@ -1,50 +1,23 @@
 import React from "react"
+import illustrations from "../../assets/ilustrations"
 import PropTypes from "prop-types"
 import styles from "./Entity.module.css"
 
 function Entity({ type, custom }) {
     const className = `${styles[type]} ${styles.Entity}`
 
-    const ilustrations = {
-        player: {
-            default: "src/assets/skins/Geralt.png",
-            var1: "src/assets/skins/Ciri.png",
-            var2: "src/assets/skins/Yennefer.png",
-        },
-        goal: {
-            Theme1: "src/assets/themes/theme1/icons8-lord-voldemort.svg",
-            Theme2: "IMAGEN 2 GOAL",
-        },
-        column: {
-            Theme1: "src/assets/themes/theme1/brick-wall-svgrepo-com (1).svg",
-            Theme2: "IMAGEN 2 COLUMN",
-        },
-        trail: {
-            Theme1: "src/assets/themes/theme1/draws-floor-svgrepo-com (1).svg",
-            Theme2: "IMAGEN 2 TRAIL",
-        },
-        horizontalWall: {
-            Theme1: "src/assets/themes/theme1/brick-wall-svgrepo-com (2).svg",
-            Theme2: "IMAGEN 2 HORIZONTAL WALL",
-        },
-        verticalWall: {
-            Theme1: "src/assets/themes/theme1/brick-wall-svgrepo-com (2).svg",
-            Theme2: "IMAGEN 2 VERTICAL WALL",
-        },
-    }
-
     let illustration
     switch (type) {
         case "player":
             switch (custom) {
                 case "default":
-                    illustration = ilustrations.player.default
+                    illustration = illustrations.player.default
                     break
                 case "var1":
-                    illustration = ilustrations.player.var1
+                    illustration = illustrations.player.var1
                     break
                 case "var2":
-                    illustration = ilustrations.player.var2
+                    illustration = illustrations.player.var2
                     break
                 default:
                     illustration = ""
@@ -53,10 +26,10 @@ function Entity({ type, custom }) {
         case "goal":
             switch (custom) {
                 case "Theme 1":
-                    illustration = ilustrations.goal.Theme1
+                    illustration = illustrations.goal.Theme1
                     break
                 case "Theme 2":
-                    illustration = ilustrations.goal.Theme2
+                    illustration = illustrations.goal.Theme2
                     break
                 default:
                     illustration = ""
@@ -65,10 +38,10 @@ function Entity({ type, custom }) {
         case "column":
             switch (custom) {
                 case "Theme 1":
-                    illustration = ilustrations.column.Theme1
+                    illustration = illustrations.column.Theme1
                     break
                 case "Theme 2":
-                    illustration = ilustrations.column.Theme2
+                    illustration = illustrations.column.Theme2
                     break
                 default:
                     illustration = ""
@@ -77,10 +50,10 @@ function Entity({ type, custom }) {
         case "trail":
             switch (custom) {
                 case "Theme 1":
-                    illustration = ilustrations.trail.Theme1
+                    illustration = illustrations.trail.Theme1
                     break
                 case "Theme 2":
-                    illustration = ilustrations.horizontalWall
+                    illustration = illustrations.horizontalWall
                     break
                 default:
                     illustration = ""
@@ -89,10 +62,10 @@ function Entity({ type, custom }) {
         case "horizontalWall":
             switch (custom) {
                 case "Theme 1":
-                    illustration = ilustrations.horizontalWall.Theme1
+                    illustration = illustrations.horizontalWall.Theme1
                     break
                 case "Theme 2":
-                    illustration = ilustrations.horizontalWall.Theme2
+                    illustration = illustrations.horizontalWall.Theme2
                     break
                 default:
                     illustration = ""
@@ -101,10 +74,10 @@ function Entity({ type, custom }) {
         case "verticalWall":
             switch (custom) {
                 case "Theme 1":
-                    illustration = ilustrations.verticalWall.Theme1
+                    illustration = illustrations.verticalWall.Theme1
                     break
                 case "Theme 2":
-                    illustration = ilustrations.verticalWall.Theme2
+                    illustration = illustrations.verticalWall.Theme2
                     break
                 default:
                     illustration = ""
