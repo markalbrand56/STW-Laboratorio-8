@@ -10,7 +10,7 @@ function Maze({ json, width, height, onWin, theme, skin }) {
 
     const checkWin = (maze, position) => {
         if (maze[position.y][position.x] === "g") {
-            onWin({ target: { value: true } })
+            onWin("win", true)
         }
     }
 

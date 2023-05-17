@@ -14,20 +14,10 @@ const schema = Joi.object({
 })
 
 function Result() {
-    const form = useForm(schema, {
-        height: 4,
-        width: 4,
-        skin: "default",
-        theme: "default",
-        timeLimit: null,
-        timeLimitEnabled: false,
-        gameOver: false,
-        win: false,
-    })
+    const form = useForm(schema)
 
     const handleButton = () => {
-        form.setValue("gameOver", false)
-        form.setValue("win", false)
+        form.clean()
         navigate("/")
     }
 
@@ -35,10 +25,10 @@ function Result() {
         <div className={styles.Container}>
             <div className={styles.Result}>
                 <div className={styles.Title}>
-                    {form.values.win ? "You Win!" : "Game Over"}
+                    {form.config.win ? "You Win!" : "Game Over"}
                 </div>
                 <div className={styles.Subtitle}>
-                    {form.values.win ? "Congratulations!" : "Try again"}
+                    {form.config.win ? "Congratulations!" : "Try again"}
                 </div>
             </div>
             <Button onClick={handleButton}> Return </Button>

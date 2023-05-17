@@ -21,7 +21,7 @@ function Timer({ timeLimit, onChange, win }) {
                 clearInterval(interval)
                 setSeconds(0)
                 setMinutes(0)
-                onChange({ target: { value: true } })
+                onChange("gameOver", true)
                 return
             }
 

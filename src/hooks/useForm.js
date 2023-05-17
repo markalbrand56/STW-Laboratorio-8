@@ -1,21 +1,21 @@
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { useStoreon } from "storeon/react"
 
-const useForm = (schema, initialValues) => {
+const useForm = (schema) => {
     const { dispatch, config } = useStoreon("config")
     const [errors, setErrors] = useState(false)
-    const [values, setValues] = useState(initialValues)
 
     const setValue = (field, value) => {
         console.log("set value", field, value)
-        setValues({
-            ...values,
-            [field]: value,
-        })
         dispatch("config/set", {
             ...config,
             [field]: value,
         })
+    }
+
+    const clean = () => {
+        console.log("CLEANING")
+        dispatch("config/clean")
     }
 
     const onChange =
@@ -31,7 +31,7 @@ const useForm = (schema, initialValues) => {
         }
 
     const validate = () => {
-        const validation = schema.validate(values)
+        const validation = schema.validate(config)
         if (validation.error) {
             setErrors(validation.error.details)
             return false
@@ -42,17 +42,13 @@ const useForm = (schema, initialValues) => {
         return true
     }
 
-    useEffect(() => {
-        setValues(config || initialValues)
-    }, [])
-
     return {
-        values,
         setValue,
-        setValues,
         onChange,
         validate,
         errors,
+        config,
+        clean,
     }
 }
 

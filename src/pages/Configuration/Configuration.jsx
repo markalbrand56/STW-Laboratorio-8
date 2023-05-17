@@ -29,21 +29,14 @@ const goBack = () => {
 }
 
 function Configuration() {
-    const form = useForm(schema, {
-        height: 4,
-        width: 4,
-        skin: "default",
-        theme: "default",
-        timeLimit: null,
-        timeLimitEnabled: false,
-    })
+    const form = useForm(schema)
 
     return (
         <div className={styles.Container}>
             <div className={styles.ConfigForm}>
                 <div className={styles.Sizes}>
                     <Input
-                        value={form.values.height}
+                        value={form.config.height}
                         onChange={form.onChange("height")}
                         type="number"
                         placeholder="Height"
@@ -52,7 +45,7 @@ function Configuration() {
                         min={4}
                     />
                     <Input
-                        value={form.values.width}
+                        value={form.config.width}
                         onChange={form.onChange("width")}
                         type="number"
                         placeholder="Width"
@@ -62,7 +55,7 @@ function Configuration() {
                     />
                 </div>
                 <Select
-                    value={form.values.skin}
+                    value={form.config.skin}
                     onChange={form.onChange("skin")}
                     options={[
                         { value: "default", label: "Default" },
@@ -86,7 +79,7 @@ function Configuration() {
                     onChange={form.onChange("theme")}
                 />
                 <InputCheck
-                    value={form.values.timeLimit}
+                    value={form.config.timeLimit}
                     onChangeCheck={form.onChange("timeLimitEnabled")}
                     onChangeInput={form.onChange("timeLimit")}
                     type="number"
@@ -94,7 +87,7 @@ function Configuration() {
                     label="Time Limit"
                     max={60 * 60}
                     min={5}
-                    check={form.values.timeLimitEnabled}
+                    check={form.config.timeLimitEnabled}
                 />
             </div>
             <Button onClick={goBack} type="primary">

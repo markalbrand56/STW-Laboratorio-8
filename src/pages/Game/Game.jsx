@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react"
-import { useStoreon } from "storeon/react"
 import Joi from "joi"
 import Maze from "../../components/Maze/Maze"
 import styles from "./Game.module.css"
@@ -16,18 +15,8 @@ const schema = Joi.object({
 })
 
 function Game() {
-    const { config } = useStoreon("config")
     const [mazeLayout, setMazeLayout] = useState(null)
-    const form = useForm(schema, {
-        height: 4,
-        width: 4,
-        skin: "default",
-        theme: "default",
-        timeLimit: null,
-        timeLimitEnabled: false,
-        gameOver: false,
-        win: false,
-    })
+    const form = useForm(schema)
 
     const getMaze = async (w, h) => {
         const url = `https://maze.uvgenios.online/?type=json&w=${w}&h=${h}`
@@ -36,10 +25,9 @@ function Game() {
     }
 
     const loadMaze = async () => {
-        const maze = await getMaze(config.width, config.height)
+        const maze = await getMaze(form.config.width, form.config.height)
         setMazeLayout(maze)
-        form.setValue("gameOver", false)
-        form.setValue("win", false)
+        form.clean()
     }
 
     useEffect(() => {
@@ -47,31 +35,30 @@ function Game() {
         loadMaze()
     }, [])
 
-    console.log(config)
+    console.log(form.config.gameOver)
 
-    if (form.values.win || form.values.gameOver) {
-        setTimeout(() => {
-            navigate("/result")
-        }, 3000)
-    }
+    useEffect(() => {
+        console.log("desde el useEffect", form.config.gameOver)
+        if(form.config.gameOver || form.config.win) navigate("/result")
+    }, [form.config.gameOver, form.config.win])
 
     return (
         <div className={styles.Container}>
-            {config.timeLimitEnabled && (
+            {form.config.timeLimitEnabled && (
                 <Timer
-                    timeLimit={config.timeLimit}
-                    onChange={form.onChange("gameOver")}
-                    win={form.values.win}
+                    timeLimit={form.config.timeLimit}
+                    onChange={form.setValue}
+                    win={form.config.win}
                 />
             )}
-            {mazeLayout && !form.values.gameOver && (
+            {mazeLayout && !form.config.gameOver && (
                 <Maze
                     json={mazeLayout}
-                    height={config.height}
-                    width={config.width}
-                    onWin={form.onChange("win")}
-                    theme={config.theme}
-                    skin={config.skin}
+                    height={form.config.height}
+                    width={form.config.width}
+                    onWin={form.setValue}
+                    theme={form.config.theme}
+                    skin={form.config.skin}
                 />
             )}
         </div>
