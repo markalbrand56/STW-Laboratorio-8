@@ -42,6 +42,13 @@ function Game() {
         if(form.config.gameOver || form.config.win) navigate("/result")
     }, [form.config.gameOver, form.config.win])
 
+    useEffect(() => {
+        document.addEventListener("scroll", (event) => {
+            event.preventDefault()
+            event.stopPropagation()
+        })
+    }, [])
+
     return (
         <div className={styles.Container}>
             {form.config.timeLimitEnabled && (

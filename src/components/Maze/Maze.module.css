@@ -1,8 +1,11 @@
 .MazeContainer {
     display: grid;
 
-    width: max-content;
-    height: max-content;
+    width: min(90%, 1000px);
+    height: min(90%, 1000px);
+
+    overflow-x: scroll;
+    overflow-y: scroll;
 
     padding: 3em;
 
