@@ -95,6 +95,7 @@ function Maze({ json, width, height, onWin, theme, skin }) {
     }, [playerPosition])
 
     return (
+        // eslint-disable-next-line jsx-a11y/no-static-element-interactions
         <div
             className={styles.MazeContainer}
             style={{
@@ -114,7 +115,9 @@ function Maze({ json, width, height, onWin, theme, skin }) {
                         case "+":
                             return <Entity type="column" custom={theme} />
                         case "-":
-                            return <Entity type="horizontalWall" custom={theme} />
+                            return (
+                                <Entity type="horizontalWall" custom={theme} />
+                            )
                         case "|":
                             return <Entity type="verticalWall" custom={theme} />
                         case " ":

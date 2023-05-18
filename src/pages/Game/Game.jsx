@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from "react"
-import ilustrations from "../../assets/ilustrations"
 import Joi from "joi"
 import Maze from "../../components/Maze/Maze"
 import styles from "./Game.module.css"
 import Timer from "../../components/Timer/Timer"
 import useForm from "../../hooks/useForm"
 import { navigate } from "../../store/index"
-import illustrations from "../../assets/ilustrations";
+import illustrations from "../../assets/ilustrations"
 
 const schema = Joi.object({
     height: Joi.number().min(4).max(100).required(),
@@ -33,15 +32,11 @@ function Game() {
     }
 
     useEffect(() => {
-        console.log("CARGANDO EL MAZE")
         loadMaze()
     }, [])
 
-    console.log(form.config.gameOver)
-
     useEffect(() => {
-        console.log("desde el useEffect", form.config.gameOver)
-        if(form.config.gameOver || form.config.win) navigate("/result")
+        if (form.config.gameOver || form.config.win) navigate("/result")
     }, [form.config.gameOver, form.config.win])
 
     useEffect(() => {
@@ -51,19 +46,19 @@ function Game() {
         })
     }, [])
 
-    let skinIllustration = null
+    let skinIllustration
     switch (form.config.skin) {
         case "Default":
-            skinIllustration = ilustrations.player.default
+            skinIllustration = illustrations.player.default
             break
         case "var1":
-            skinIllustration = ilustrations.player.var1
+            skinIllustration = illustrations.player.var1
             break
         case "var2":
-            skinIllustration = ilustrations.player.var2
+            skinIllustration = illustrations.player.var2
             break
         default:
-            skinIllustration = ilustrations.player.default
+            skinIllustration = illustrations.player.default
     }
 
     return (

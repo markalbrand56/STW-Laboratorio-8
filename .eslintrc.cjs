@@ -21,5 +21,6 @@ module.exports = {
     "semi": ["error", "never"],
     "max-len": ["warn", { "code": 120 }],
     "prettier/prettier": ["warn", {"semi": false, "tabWidth": 4,'endOfLine': 'auto'}],
+    "jsx-a11y/no-noninteractive-tabindex": "off",
   },
 };

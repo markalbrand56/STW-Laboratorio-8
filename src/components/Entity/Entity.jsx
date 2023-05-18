@@ -1,6 +1,6 @@
 import React from "react"
-import illustrations from "../../assets/ilustrations"
 import PropTypes from "prop-types"
+import illustrations from "../../assets/ilustrations"
 import styles from "./Entity.module.css"
 
 function Entity({ type, custom }) {
@@ -89,7 +89,7 @@ function Entity({ type, custom }) {
 
     return (
         <div className={className}>
-            <img src={illustration} alt={custom}/>
+            <img src={illustration} alt={custom} />
         </div>
     )
 }

@@ -14,9 +14,9 @@ function Home() {
 
     return (
         <div className={styles.Container}>
-            <img src="src/assets/Geralt bc.png" alt="Geralt"/>
+            <img src="src/assets/Geralt bc.png" alt="Geralt" />
             <div className={styles.HomeMenu}>
-                <img src="src/assets/TW3 Logo.png" alt="Logo"/>
+                <img src="src/assets/TW3 Logo.png" alt="Logo" />
                 <h1>Welcome</h1>
                 <div className={styles.Buttons}>
                     <Button type="primary" onClick={handleStartButtonClick}>
@@ -27,7 +27,7 @@ function Home() {
                     </Button>
                 </div>
             </div>
-            <img src="src/assets/Ciri BC.png" alt="Ciri"/>
+            <img src="src/assets/Ciri BC.png" alt="Ciri" />
         </div>
     )
 }
