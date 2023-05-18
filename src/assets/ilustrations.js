@@ -44,7 +44,7 @@ const illustrations = {
     },
     verticalWall: {
         Theme1: VerticalWall1,
-        Theme2: HorizontalWall2,
+        Theme2: VerticalWall2,
     },
     backgrounds: {
         background1: Background1,
