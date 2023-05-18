@@ -53,7 +53,7 @@ function Entity({ type, custom }) {
                     illustration = illustrations.trail.Theme1
                     break
                 case "Theme 2":
-                    illustration = illustrations.horizontalWall
+                    illustration = illustrations.trail.Theme2
                     break
                 default:
                     illustration = ""

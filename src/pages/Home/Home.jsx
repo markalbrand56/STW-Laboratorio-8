@@ -2,6 +2,7 @@ import React from "react"
 import styles from "./Home.module.css"
 import Button from "../../components/Button/Button"
 import { navigate } from "../../store/index"
+import illustrations from "../../assets/ilustrations"
 
 function Home() {
     const handleStartButtonClick = () => {
@@ -14,7 +15,7 @@ function Home() {
 
     return (
         <div className={styles.Container}>
-            <img src="src/assets/Geralt bc.png" alt="Geralt" />
+            <img src={illustrations.backgrounds.background1} alt="Geralt" />
             <div className={styles.HomeMenu}>
                 <img src="src/assets/TW3 Logo.png" alt="Logo" />
                 <h1>Welcome</h1>
@@ -27,7 +28,7 @@ function Home() {
                     </Button>
                 </div>
             </div>
-            <img src="src/assets/Ciri BC.png" alt="Ciri" />
+            <img src={illustrations.backgrounds.background2} alt="Ciri" />
         </div>
     )
 }
