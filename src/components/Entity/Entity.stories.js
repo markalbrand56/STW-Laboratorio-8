@@ -34,10 +34,24 @@ export const Trail1 = {
     },
 }
 
+export const Trail2 = {
+    args: {
+        type: "trail",
+        custom: "Theme 2",
+    },
+}
+
 export const Column1 = {
     args: {
         type: "column",
         custom: "Theme 1",
+    },
+}
+
+export const Column2 = {
+    args: {
+        type: "column",
+        custom: "Theme 2",
     },
 }
 
@@ -48,9 +62,22 @@ export const HorizontalWall1 = {
     },
 }
 
+export const HorizontalWall2 = {
+    args: {
+        type: "horizontalWall",
+        custom: "Theme 2",
+    },
+}
+
 export const VerticalWall1 = {
     args: {
         type: "verticalWall",
         custom: "Theme 1",
+    },
+}
+
+export const VerticalWall2 = {
+    args: {
+        type: "verticalWall",
     },
 }
