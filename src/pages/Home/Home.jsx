@@ -17,7 +17,7 @@ function Home() {
         <div className={styles.Container}>
             <img src={illustrations.backgrounds.background1} alt="Geralt" />
             <div className={styles.HomeMenu}>
-                <img src="src/assets/TW3 Logo.png" alt="Logo" />
+                <img src={illustrations.logo.mainLogo} alt="Logo" />
                 <h1>Welcome</h1>
                 <div className={styles.Buttons}>
                     <Button type="primary" onClick={handleStartButtonClick}>

@@ -19,6 +19,7 @@ import VerticalWall2 from "./themes/theme2/brick-wall-svgrepo-com (2).svg"
 
 import Background1 from "./Geralt bc.png"
 import Background2 from "./Ciri BC.png"
+import Logo from "./TW3 Logo.png"
 
 const illustrations = {
     player: {
@@ -49,6 +50,9 @@ const illustrations = {
     backgrounds: {
         background1: Background1,
         background2: Background2,
+    },
+    logo: {
+        mainLogo: Logo,
     },
 }
 

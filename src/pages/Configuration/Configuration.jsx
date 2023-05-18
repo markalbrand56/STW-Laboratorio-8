@@ -67,11 +67,11 @@ function Configuration() {
                 <Pills
                     tabs={[
                         {
-                            label: "Velen",
+                            label: "Novigrad",
                             content: "Theme 1",
                         },
                         {
-                            label: "Novigrad",
+                            label: "Velen",
                             content: "Theme 2",
                         },
                     ]}
